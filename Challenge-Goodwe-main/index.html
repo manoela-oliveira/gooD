@@ -1,0 +1,97 @@
+<!-- START OF FILE index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Início - Gerenciamento de Energia</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <h1 class="app-title">Início</h1>
+            <div class="family-members">
+                <p>Membros da família</p>
+                <div class="avatars">
+                    <!-- Placeholder images, replace with actual user images if available -->
+                    <img src="https://i.imgur.com/K3tJpYm.png" alt="Usuário 1" class="avatar">
+                    <img src="https://i.imgur.com/J2d1X2A.png" alt="Usuário 2" class="avatar">
+                    <img src="https://i.imgur.com/W2d1C2D.png" alt="Usuário 3" class="avatar">
+                </div>
+            </div>
+        </header>
+
+        <!-- Tab Navigation (Espaços / Dispositivos) -->
+        <nav class="tab-navigation">
+            <button class="tab-button">Espaços</button>
+            <button class="tab-button active">Dispositivos</button>
+        </nav>
+
+        <!-- Main Content: Device Grid -->
+        <div class="device-grid" id="listaDispositivos">
+            <!-- Device cards will be dynamically inserted here by JavaScript -->
+            <!-- The "ADICIONAR NOVO DISPOSITIVO" card will be appended by JS -->
+        </div>
+
+        <!-- Modals for Add/Edit Device (Keeping original IDs for JS compatibility) -->
+        <div id="modalDispositivo" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Cadastrar Dispositivo</h2>
+                <form id="formDispositivo">
+                    <input type="text" id="nomeDispositivo" placeholder="Nome do dispositivo" required />
+                    <input type="number" id="importanciaDispositivo" placeholder="Importância (1-3)" required min="1" max="3" />
+                    <input type="number" id="consumoDispositivo" placeholder="Consumo (kWh)" required step="0.01" min="0" />
+                    <button type="submit" class="blue-btn">Adicionar Dispositivo</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="modalEditarDispositivo" class="modal-overlay">
+            <div class="modal-content">
+                <span class="close-btn-edit">&times;</span>
+                <h2>Editar Dispositivo</h2>
+                <form id="formEditarDispositivo">
+                    <input type="hidden" id="dispositivoIdEdit">
+                    <input type="text" id="nomeDispositivoEdit" required placeholder="Nome do dispositivo">
+                    <input type="number" id="importanciaDispositivoEdit" required min="1" max="3" placeholder="Importância (1-3)">
+                    <input type="number" id="consumoDispositivoEdit" required step="0.01" min="0" placeholder="Consumo (kWh)">
+                    <button type="submit" class="blue-btn">Salvar Alterações</button>
+                    <button type="button" id="btnExcluirDispositivo" class="delete-btn">Excluir Dispositivo</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item">
+                <img src="https://i.imgur.com/Q2d1X2A.png" alt="Dicas"> <!-- Placeholder icon -->
+                <span>Dicas</span>
+            </a>
+            <a href="#" class="nav-item" data-page="status_energia.html">
+                <img src="https://i.imgur.com/R3tJpYm.png" alt="Gastos"> <!-- Placeholder icon -->
+                <span>Gastos</span>
+            </a>
+            <a href="#" class="nav-item active" data-page="index.html">
+                <div class="active-indicator">
+                    <img src="https://i.imgur.com/S4d1C2D.png" alt="Início"> <!-- Placeholder icon -->
+                </div>
+                <span>Início</span>
+            </a>
+            <a href="#" class="nav-item">
+                <img src="https://i.imgur.com/T5e2D3E.png" alt="Perfil"> <!-- Placeholder icon -->
+                <span>Perfil</span>
+            </a>
+            <a href="#" class="nav-item" data-page="chatbot.html">
+                <img src="https://i.imgur.com/U6f3E4F.png" alt="Mais"> <!-- Placeholder icon -->
+                <span>Mais</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
+<!-- END OF FILE index.html -->

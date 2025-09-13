@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de Energia</title>
+    <!-- Links para folhas de estilo externas -->
+    <link rel="stylesheet" href="./css/chatbot.css">
+    <link rel="stylesheet" href="./css/index.css"> <!-- Reutiliza alguns estilos globais -->
+</head>
+<body>
+    <div class="chatbot-container">
+        <header class="chatbot-header">
+            <button id="btnVoltar" class="back-btn">&larr; Voltar</button>
+            <h2>Seu Assistente de Energia</h2>
+            <div id="relogio-chatbot" class="relogio"></div>
+        </header>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Mensagens do chat serão inseridas aqui via JavaScript -->
+            <div class="message bot-message">Olá! Sou seu assistente de energia. Posso te ajudar com dúvidas sobre o aplicativo, produtos GoodWe, gerenciar seus dispositivos e verificar o status de energia da sua casa. Como posso ajudar?</div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Digite sua mensagem..." autocomplete="off">
+            <button id="sendMessageBtn" class="blue-btn">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Bibliotecas de terceiros para funcionalidades JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+
+    <!-- Seu JavaScript personalizado para o chatbot -->
+    <script src="./js/chatbot.js"></script>
+</body>
+</html>

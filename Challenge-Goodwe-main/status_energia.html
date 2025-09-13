@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status de Energia</title>
+    <link rel="stylesheet" href="./css/index.css"> <!-- Reutiliza estilos básicos -->
+    <link rel="stylesheet" href="./css/status_energia.css"> <!-- Estilos específicos da página -->
+</head>
+<body>
+    <div class="wrapper">
+        <header style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+            <div>
+                <button id="btnVoltar" class="back-btn">&larr; Voltar</button>
+                <h1>Status de Energia</h1>
+            </div>
+            <div class="header-info">
+                <div id="relogio-status">00:00:00</div>
+            </div>
+        </header>
+
+        <!-- SEÇÃO DE STATUS E CONTROLE DE ENERGIA (Movida do index.html) -->
+        <h2>Visão Geral da Energia</h2>
+        <div class="status-energia-container">
+            <!-- Controles do modo de operação e display da bateria -->
+            <div class="controles-modo">
+                <button id="btnMudarModo" class="concessionaria">Mudar para Modo Bateria</button>
+                <div class="bateria-container">
+                    <div class="bateria-externa">
+                        <div id="bateria-interna" class="bateria-interna"></div>
+                    </div>
+                </div>
+                <span id="bateria-porcentagem" style="font-size: 20px; font-weight: bold;">0%</span>
+            </div>
+            <!-- Display de consumo total -->
+            <div id="statusConsumo" class="consumo-display"></div>
+            <!-- Controles de otimização automática e manual -->
+            <div class="gestao-energia">
+                <label for="limiteOtimizacaoInput">Otimizar abaixo de:</label>
+                <input type="number" id="limiteOtimizacaoInput" min="1" max="100" value="50">
+                <span>%</span>
+                <button id="btnSalvarLimite" class="save-btn">Salvar</button>
+                <button id="btnVerificarConsumo" class="blue-btn">Otimizar Manualmente</button>
+            </div>
+            <!-- Área de mensagens para o usuário -->
+            <div id="mensagem" style="margin-top: 10px; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <script src="./js/status_energia.js"></script>
+</body>
+</html>

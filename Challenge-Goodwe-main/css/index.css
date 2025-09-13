@@ -1,0 +1,429 @@
+/* START OF FILE index.css */
+/* Core Styles - index.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif; /* Assumindo que Poppins já está importada em algum lugar ou adicionar @import */
+    background-color: #f8f8f8; /* Light gray background */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    padding: 0; /* No padding on body, container will manage */
+}
+
+.app-container {
+    width: 100%;
+    max-width: 450px; /* Max width for mobile-like experience */
+    min-height: 100vh; /* Full height */
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* For bottom nav */
+}
+
+/* --- Header Section --- */
+.app-header {
+    padding: 20px 25px 15px 25px; /* Top, Right, Bottom, Left */
+    /* border-bottom: 1px solid #eee; */ /* Remove border-bottom from here */
+    background-color: #ffffff;
+}
+
+.app-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #e50000; /* Red color from image */
+    margin-bottom: 15px;
+}
+
+.family-members {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.family-members p {
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+
+.avatars {
+    display: flex;
+    position: relative;
+    padding-right: 15px; /* Adjust for avatar overlap + padding */
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #fff; /* White border for overlap effect */
+    object-fit: cover;
+    margin-left: -8px; /* Further overlap */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for avatars */
+}
+.avatars .avatar:first-child {
+    margin-left: 0; /* No negative margin for the first avatar */
+}
+
+
+/* --- Tab Navigation --- */
+.tab-navigation {
+    display: flex;
+    background-color: #f0f0f0;
+    margin: 20px 25px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* --- Device Grid --- */
+.device-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 15px;
+    padding: 0 25px 90px 25px; /* Padding for grid, bottom padding for bottom nav */
+    flex-grow: 1; /* Allow grid to expand */
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+.device-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push toggle to bottom */
+    align-items: flex-start; /* Align text to left */
+    min-height: 150px; /* Minimum height for cards */
+    transition: transform 0.2s ease;
+}
+
+.device-card:hover {
+    transform: translateY(-3px);
+}
+
+.device-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.device-card p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 15px; /* Space before toggle */
+    line-height: 1.3;
+}
+
+.device-icon {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    /* Removed background-color from device-icon, icon should be transparent or have its own style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.device-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.device-status-toggle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Push to bottom */
+    justify-content: space-between;
+}
+
+.device-status-toggle span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+/* Specific color for ON/OFF text */
+.device-status-toggle span.on {
+    color: #e50000; /* Red for ON */
+}
+.device-status-toggle span.off {
+    color: #888; /* Gray for OFF */
+}
+
+
+/* --- Toggle Switch Styles (re-using from previous index.css) --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #e50000; /* Red for ON state */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* --- Add New Device Card --- */
+.add-new-device {
+    background-color: #f9f9f9; /* Lighter background for add card */
+    border: 2px dashed #ddd; /* Dashed border */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px; /* Ensure padding is consistent */
+}
+
+.add-new-device:hover {
+    background-color: #f0f0f0;
+}
+
+.add-icon {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #e50000; /* Red plus icon */
+}
+
+.add-new-device h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+
+/* --- Bottom Navigation Bar --- */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Center the nav bar */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 100%;
+    max-width: 450px; /* Match app-container max-width */
+    background-color: #ffffff;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #888;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px;
+    transition: color 0.3s ease;
+    position: relative;
+    flex: 1; /* Distribute items evenly */
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 3px;
+    filter: grayscale(100%); /* Default to grayscale */
+    transition: filter 0.3s ease;
+}
+
+.nav-item.active {
+    color: #e50000; /* Active item text color */
+}
+
+.nav-item.active img {
+    filter: grayscale(0%); /* Active item icon color */
+}
+
+.nav-item .active-indicator {
+    background-color: #e50000; /* Red circle for active icon */
+    border-radius: 50%;
+    padding: 8px; /* Size of the circle */
+    margin-bottom: -5px; /* Adjust to move icon slightly up */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(229, 0, 0, 0.3); /* Soft shadow for the active indicator */
+    position: absolute; /* Position relative to .nav-item */
+    top: -15px; /* Move the indicator up */
+}
+.nav-item.active .active-indicator img {
+    filter: brightness(0) invert(1); /* Make icon white inside the red circle */
+}
+
+
+/* --- Modal Styles (Retain and adapt existing) --- */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stays on top */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-btn, .close-btn-edit {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus,
+.close-btn-edit:hover,
+.close-btn-edit:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="number"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.blue-btn {
+    background-color: #e50000; /* Adapting to the app's red theme */
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blue-btn:hover {
+    background-color: #c00000;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+

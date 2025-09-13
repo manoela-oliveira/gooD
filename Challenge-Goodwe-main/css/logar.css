@@ -1,0 +1,167 @@
+/*
+ * Google Fonts: Importando uma fonte mais moderna (Poppins)
+ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fce4ec; /* Fundo rosa bem suave, conforme a imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.login-container {
+    background-color: #ffffff; /* Fundo branco para o container principal */
+    padding: 30px 25px; /* Ajustado para ser mais compacto */
+    border-radius: 20px; /* Bordas mais arredondadas */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada e suave */
+    width: 350px; /* Largura fixa para se assemelhar a um app mobile */
+    max-width: 90%; /* Garante responsividade em telas menores */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaçamento entre os elementos */
+    position: relative;
+    overflow: hidden; /* Para garantir que as bordas arredondadas funcionem bem com a sombra */
+}
+
+/* Estilo para "uma parceria com" */
+.header-text {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: -15px; /* Puxa um pouco para cima do logo */
+    font-weight: 500;
+}
+
+/* Estilo para o logo GoodWe */
+.logo img {
+    max-width: 150px; /* Ajuste o tamanho do logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Grupo de botões ENTREE e CADASTRO */
+.buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os botões */
+    margin-bottom: 15px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px 20px; /* Padding maior para botões */
+    border: none;
+    border-radius: 10px; /* Bordas arredondadas para os botões */
+    font-size: 16px;
+    font-weight: 600; /* Peso da fonte mais forte */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remover sublinhado de links/botões */
+    color: white; /* Cor padrão do texto dos botões */
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+}
+
+/* Botões primários (ENTRE, CADASTRO) */
+.primary-btn {
+    background-color: #e50000; /* Vermelho forte, conforme a imagem */
+}
+
+.primary-btn:hover {
+    background-color: #c00000; /* Vermelho mais escuro no hover */
+}
+
+.secondary-btn {
+    background-color: #e50000; /* Vermelho forte, conforme a imagem */
+}
+
+.secondary-btn:hover {
+    background-color: #c00000; /* Vermelho mais escuro no hover */
+}
+
+/* Separador "ou" */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+/* Botão "Continuar com o Google" */
+.google-btn {
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    color: #333; /* Texto escuro */
+    border: 1px solid #ddd; /* Borda sutil */
+    padding: 12px 20px; /* Ajuste o padding */
+    margin-top: 5px; /* Um pouco mais de espaço */
+}
+
+.google-btn img {
+    width: 20px; /* Tamanho do logo do Google */
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-btn:hover {
+    background-color: #e6e6e6; /* Cinza um pouco mais escuro no hover */
+}
+
+/* Termos de Serviço e Política de Privacidade */
+.terms-privacy {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+    margin-top: 25px; /* Mais espaço acima */
+}
+
+.terms-privacy a {
+    color: #e50000; /* Cor vermelha para os links */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms-privacy a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade básica para dispositivos muito pequenos */
+@media (max-width: 320px) {
+    .login-container {
+        padding: 20px 15px;
+    }
+    .btn {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    .logo img {
+        max-width: 120px;
+    }
+}
